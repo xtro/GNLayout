@@ -1,7 +1,7 @@
-#GNLayout#
+# GNLayout #
 version 0.1
 
-##TODO:
+## TODO:
 - Add identifier to LayoutEntry
 - Add a dictionary for LayoutEntry
 - Add STATE feature
@@ -10,24 +10,25 @@ version 0.1
 	- Custom states
 	 	
 
-#Basic elements of this kit
+# Basic elements of this kit
 
-##Current display elements
+## Current display elements
 
-	class View: GNLayoutDisplayEntry
-	class Button: GNLayoutDisplayEntry
-	class Label: GNLayoutDisplayEntry
+    class GNView: GNLayoutDisplayEntry
+    class GNButton: GNLayoutDisplayEntry
+    class GNLabel: GNLayoutDisplayEntry
+    class GNImage: GNLayoutDisplayEntry
 
-####Create your own entry:
+#### Create your own entry:
 
 Every single class is inherited from **GNLayoutDisplayEntry** class.
 See more about **GNLayoutDisplayEntry** class. 
 
-##Easy configuration
+## Easy configuration
 	
 Every display entry has a property and a layout configuration, those configurations are the following:
 
-###Property configuration
+### Property configuration
 
 	properties: [
 	    .fill(.lightGray),
@@ -42,7 +43,7 @@ All element is valid from **GNLayoutDisplayProperty**, but there are some contro
 	    case fill(_ :UIColor)
 	    case border(_ :UIColor,_ :CGFloat)
 	    
-	    // Control specific
+	    // Label specific
 	    case textColor(_ :UIColor)
 	    case contentEdgeInsets(_ :UIEdgeInsets)
 
@@ -53,7 +54,7 @@ All element is valid from **GNLayoutDisplayProperty**, but there are some contro
 
 See more about **GNLayoutDisplayProperty** class.
 
-##Layout configuration
+## Layout configuration
 	layout: [
 	    .horizontal(5),
 	    .bottom(5),
@@ -89,7 +90,7 @@ All element is must be valid for a **GNLayoutCompositionEntry**., there are no e
 
 See more about **GNLayoutCompositionEntry** class.
 
-##Subviews
+## Subviews
 Nested views are works perfectly in that way.
 
 **There is an easy example for a box in a button.**
@@ -99,7 +100,7 @@ Nested views are works perfectly in that way.
 Example code:
 	
     subviews: [
-        View(
+        GNView(
              properties: [
                 .fill(.white),
                 .cornerRadius(30)
@@ -108,7 +109,7 @@ Example code:
                 .center
             ],
              subviews: [
-                Button(
+                GNButton(
                     "Tap me!!!",
                     properties: [
                         .fill(.white),
