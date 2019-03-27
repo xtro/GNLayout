@@ -1,5 +1,6 @@
 # GNLayout #
 version 0.1
+![image](./Documentation/gnlayout_video.gif)
 
 ## TODO:
 - Add identifier to LayoutEntry
